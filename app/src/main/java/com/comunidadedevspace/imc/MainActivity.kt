@@ -1,5 +1,6 @@
 package com.comunidadedevspace.imc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -10,12 +11,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        //Recuperar os componentes EditText
-        //Criar uma variável e associar(=) a um componente de UI<EditText>
-        //Recuperar o botão da tela
-        //Colocar a açao no botao - setOnClickListener
-        //Recuperar o texto digitado no edt peso
 
         val edtPeso = findViewById<TextInputEditText>(R.id.edt_peso)
         val edtAltura = findViewById<TextInputEditText>(R.id.edt_altura)
@@ -29,8 +24,6 @@ class MainActivity : AppCompatActivity() {
             val alturaStr: String = edtAltura.text.toString()
 
             if(pesoStr == "" || alturaStr == ""){
-                 //Mostrar mensagem para o usuário
-
 
 
 
@@ -42,15 +35,23 @@ class MainActivity : AppCompatActivity() {
              )
                  .show()
 
-            }else{pesoStr
-            val peso = pesoStr.toFloat()
-            val altura = alturaStr.toFloat()
+            } else {
+                val peso = pesoStr.toFloat()
+                val altura = alturaStr.toFloat()
 
-         val alturaQ2 = altura * altura
-         val resultado = peso / alturaQ2
-                
-         println("Roque acao do botao" + resultado)
-        }
+                val alturaQ2 = altura * altura
+                val resultado = peso / alturaQ2
+
+                val intent = Intent(this, Resultactivity::class.java)
+                intent.putExtra(KEY_RESULT_IMC, resultado)
+                startActivity(intent)
+
+                println("Roque acao do botao" + resultado)
+
+                //Intent - classe do próprio Android (intenção de)
+
+
+            }
         }
     }
 }
