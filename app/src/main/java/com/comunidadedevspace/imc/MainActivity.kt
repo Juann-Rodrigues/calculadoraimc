@@ -46,10 +46,9 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra(KEY_RESULT_IMC, resultado)
                 startActivity(intent)
 
-                println("Roque acao do botao" + resultado)
-
-                //Intent - classe do próprio Android (intenção de)
-
+                // Cores
+                //EditText Background + ícones
+                //Gradiente + icone + titulo + descrição
 
             }
         }
