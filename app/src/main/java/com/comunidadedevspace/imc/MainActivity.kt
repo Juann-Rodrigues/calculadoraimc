@@ -25,8 +25,6 @@ class MainActivity : AppCompatActivity() {
 
             if(pesoStr == "" || alturaStr == ""){
 
-
-
              Snackbar
                  .make(
                  edtPeso,
@@ -45,10 +43,6 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, Resultactivity::class.java)
                 intent.putExtra(KEY_RESULT_IMC, resultado)
                 startActivity(intent)
-
-                // Cores
-                //EditText Background + ícones
-                //Gradiente + icone + titulo + descrição
 
             }
         }
